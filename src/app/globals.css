@@ -1,0 +1,35 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme inline {
+  --color-background: #faf6ec;
+  --color-surface: #ffffff;
+  --color-surface-hover: #f4ecd8;
+  --color-border: #e3d7b8;
+  --color-foreground: #1c2b22;
+  --color-muted: #5c6b60;
+  --color-accent: #0f6b42;
+  --color-accent-hover: #14824f;
+  --color-navy: #1b3a5c;
+  --color-gold: #c9932c;
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-playfair);
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display), Georgia, serif;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: #faf6ec;
+}
