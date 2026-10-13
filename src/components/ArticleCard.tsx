@@ -1,4 +1,4 @@
-import Image from "next/image";
+import CoverImage from "@/components/CoverImage";
 import Link from "next/link";
 import type { ArticleMeta } from "@/types/article";
 import { getCategoryBadgeClass, getCategoryName } from "@/lib/categories";
@@ -14,12 +14,11 @@ export default function ArticleCard({ article }: { article: ArticleMeta }) {
       className="group flex flex-col overflow-hidden rounded-lg border border-border bg-surface transition-colors hover:bg-surface-hover"
     >
       <div className="relative aspect-[16/9] w-full overflow-hidden">
-        <Image
+        <CoverImage
           src={article.coverImage}
           alt={article.title}
-          fill
           sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-          className="object-cover transition-transform duration-300 group-hover:scale-105"
+          className="transition-transform duration-300 group-hover:scale-105"
         />
       </div>
 

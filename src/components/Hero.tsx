@@ -1,4 +1,4 @@
-import Image from "next/image";
+import CoverImage from "@/components/CoverImage";
 import Link from "next/link";
 import type { ArticleMeta } from "@/types/article";
 import { getCategoryBadgeClass, getCategoryName } from "@/lib/categories";
@@ -11,13 +11,12 @@ export default function Hero({ article }: { article: ArticleMeta }) {
       className="group relative block overflow-hidden rounded-xl border border-border"
     >
       <div className="relative aspect-[4/5] w-full sm:aspect-[21/9]">
-        <Image
+        <CoverImage
           src={article.coverImage}
           alt={article.title}
-          fill
           priority
           sizes="(min-width: 1152px) 1152px, 100vw"
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          className="transition-transform duration-500 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-transparent" />
       </div>

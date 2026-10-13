@@ -1,4 +1,4 @@
-import Image from "next/image";
+import CoverImage from "@/components/CoverImage";
 import Link from "next/link";
 import type { ArticleMeta } from "@/types/article";
 import { getCategoryBadgeClass, getCategoryName } from "@/lib/categories";
@@ -43,12 +43,11 @@ export default function CategoryBlock({
           className="group flex flex-col overflow-hidden rounded-lg border border-border bg-surface transition-colors hover:bg-surface-hover"
         >
           <div className="relative aspect-[16/9] w-full overflow-hidden">
-            <Image
+            <CoverImage
               src={lead.coverImage}
               alt={lead.title}
-              fill
               sizes="(min-width: 1024px) 560px, 100vw"
-              className="object-cover transition-transform duration-300 group-hover:scale-105"
+              className="transition-transform duration-300 group-hover:scale-105"
             />
           </div>
           <div className="flex flex-1 flex-col gap-3 p-5">
@@ -75,12 +74,11 @@ export default function CategoryBlock({
               className="group flex flex-1 items-center gap-4 p-4 transition-colors hover:bg-surface-hover"
             >
               <div className="relative aspect-[16/9] w-28 shrink-0 overflow-hidden rounded-md sm:w-32">
-                <Image
+                <CoverImage
                   src={article.coverImage}
                   alt={article.title}
-                  fill
                   sizes="128px"
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
               <div className="min-w-0">
