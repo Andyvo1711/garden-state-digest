@@ -5,7 +5,7 @@ excerpt: "Enrollment in electrical, HVAC, and welding programs is climbing sharp
 category: "education"
 date: "2026-06-15"
 coverImage: "https://images.pexels.com/photos/14495738/pexels-photo-14495738.jpeg"
-featured: false
+featured: true
 imageCredit: "Photo: Pexels"
 ---
 

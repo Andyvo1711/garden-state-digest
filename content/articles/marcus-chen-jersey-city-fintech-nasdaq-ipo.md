@@ -5,7 +5,7 @@ excerpt: "Marcus Chen rang the opening bell as his Jersey City-based payments co
 category: "business-leaders"
 date: "2026-03-24"
 coverImage: "https://images.pexels.com/photos/17049771/pexels-photo-17049771/free-photo-of-portrait-of-a-businessman-in-a-suit.jpeg"
-featured: true
+featured: false
 imageCredit: "Photo: Pexels"
 ---
 
