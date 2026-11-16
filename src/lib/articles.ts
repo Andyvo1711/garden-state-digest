@@ -28,7 +28,11 @@ function readArticleFile(filename: string): {
       excerpt: data.excerpt,
       category: data.category as CategorySlug,
       coverImage: data.coverImage,
-      date: data.date,
+      // YAML may parse unquoted dates as Date objects; always keep a YYYY-MM-DD string.
+      date:
+        data.date instanceof Date
+          ? data.date.toISOString().slice(0, 10)
+          : String(data.date),
       imageCredit: data.imageCredit,
       featured: data.featured ?? false,
     },
@@ -40,7 +44,9 @@ export function getAllArticlesMeta(): ArticleMeta[] {
     .readdirSync(ARTICLES_DIR)
     .filter((f) => f.endsWith(".md"));
   const articles = filenames.map((filename) => readArticleFile(filename).meta);
-  return articles.sort((a, b) => (a.date < b.date ? 1 : -1));
+  return articles.sort((a, b) =>
+    a.date === b.date ? a.slug.localeCompare(b.slug) : a.date < b.date ? 1 : -1,
+  );
 }
 
 export function getArticlesByCategory(category: CategorySlug): ArticleMeta[] {
